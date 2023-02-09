@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=0.1">
+    <title>BASIC BLUE</title>
+</head>
+
+<body>
+    
+    <main>
+
+        <div class="v-flex" id="main-ctn">
+
+            <!-- master -->
+            <div class="module module-ctn" id="master">
+                <header>
+                    <h3>MASTER</h3>
+                </header>
+                
+                <div class="h-flex">
+                    <fieldset class="v-flex">
+                        <label for="master-gain" id="master-gain-label">volume</label>
+                        <input type="range" name="master-gain" id="master-gain-input" min="0" max="1" step="0.01">
+                    </fieldset>
+
+                    <!-- here analysers -->
+                </div>
+            </div>
+
+
+            <div class="h-flex module-ctn" id="filters">
+
+                <div class="module" id="filter1">
+                    <header class="h-flex">
+                        <h3>LPF</h3>
+                        <button class="btn-bypass" id="filter1-bypass-btn" value="">bypass <span></span></button>
+                    </header>
+    
+                    <div class="v-flex">
+                        <fieldset class="v-flex">
+                            <label for="filter1-frequency" id="filter1-frequency-label"><span></span> Hz</label>
+                            <input type="range" name="filter1-frequency" id="filter1-frequency-input" min="0" max="3000" value="3000">
+                        </fieldset>
+    
+                        <fieldset class="v-flex">
+                            <label 
+                            for="filter1-Q" 
+                            id="filter1-Q-label">reso <span></span></label>
+                            <input type="range" name="filter1-Q" id="filter1-Q-input" min="0" max="500" step="1">
+                        </fieldset>
+                    </div>
+                </div>
+
+                
+                <div class="module" id="filter2">
+                    <header class="h-flex">
+                        <h3>LPF</h3>
+                        <button class="btn-bypass" id="filter2-bypass-btn" value="">bypass <span></span></button>
+                    </header>
+    
+                    <div class="v-flex">
+                        <fieldset class="v-flex">
+                            <label for="filter2-frequency" id="filter2-frequency-label"><span></span> Hz</label>
+                            <input type="range" name="filter2-frequency" id="filter2-frequency-input" min="0" max="3000" value="3000">
+                        </fieldset>
+    
+                        <fieldset class="v-flex">
+                            <label 
+                            for="filter2-Q" 
+                            id="filter2-Q-label">reso <span></span></label>
+                            <input type="range" name="filter2-Q" id="filter2-Q-input" min="0" max="500" step="1">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <!-- oscillators -->
+            <div class="h-flex module-ctn" id="oscillators">
+
+                <div class="module" id="osc1">
+                    <header class="h-flex">
+                        <h3>OSC 1</h3>
+                        <button class="btn-hold" id="osc1-hold-btn" value="">trig hold</button>
+                    </header>
+    
+                    <fieldset>
+                        <select name="osc1-type" id="osc1-type-select">
+                            <option value="sine">sine</option>
+                            <option value="triangle">triangle</option>
+                            <option value="sawtooth">sawtooth</option>
+                            <option value="square">square</option>
+                        </select>
+                    </fieldset>
+    
+                    <fieldset class="v-flex">
+                        <label for="osc1-frequency" id="osc1-frequency-label"><span></span> Hz</label>
+                        <input type="range" name="osc1-frequency" id="osc1-frequency-input" min="80" max="3000">
+                    </fieldset>
+    
+                    <fieldset class="v-flex">
+                        <label for="osc1-gain" id="osc1-gain-label">lvl</label>
+                        <input type="range" name="osc1-gain" id="osc1-gain-input" min="0" max="1" step="0.01">
+                    </fieldset>
+                </div>
+
+
+                <div class="module" id="osc2">
+                    <header class="h-flex">
+                        <h3>OSC 1</h3>
+                        <button class="btn-hold" id="osc2-hold-btn" value="">trig hold</button>
+                    </header>
+    
+                    <fieldset>
+                        <select name="osc2-type" id="osc2-type-select">
+                            <option value="sine">sine</option>
+                            <option value="triangle">triangle</option>
+                            <option value="sawtooth">sawtooth</option>
+                            <option value="square">square</option>
+                        </select>
+                    </fieldset>
+    
+                    <fieldset class="v-flex">
+                        <label for="osc2-frequency" id="osc2-frequency-label"><span></span> Hz</label>
+                        <input type="range" name="osc2-frequency" id="osc2-frequency-input" min="80" max="3000">
+                    </fieldset>
+    
+                    <fieldset class="v-flex">
+                        <label for="osc2-gain" id="osc2-gain-label">lvl</label>
+                        <input type="range" name="osc2-gain" id="osc2-gain-input" min="0" max="1" step="0.01">
+                    </fieldset>
+                </div>
+
+            </div>
+
+
+            <!-- keyboard -->
+            <div class="module module-ctn" id="kbd">
+                <header>
+                    <h3>KEYBOARD</h3>
+                </header>
+
+                <div class="h-flex">
+
+                    <fieldset>
+                        <legend>MODE</legend>
+
+                        <div>
+                            <input type="radio" name="keyboard1-mode" value="solo">
+                            <label for="keyboard1-mode">solo</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="keyboard1-mode" value="unisson">
+                            <label for="keyboard1-mode">uni</label>
+                        </div>
+
+                    </fieldset>
+
+
+                    <fieldset id="kbd-grid">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-do" data-note="do" value="">
+                        <input type="button" class="black-pad" name="keyboard1-pad" id="keyboard1-dod" data-note="dod" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-re" data-note="re" value="">
+                        <input type="button" class="black-pad" name="keyboard1-pad" id="keyboard1-red" data-note="red" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-mi" data-note="mi" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-fa" data-note="fa" value="">
+                        <input type="button" class="black-pad" name="keyboard1-pad" id="keyboard1-fad" data-note="fad" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-sol" data-note="sol" value="">
+                        <input type="button" class="black-pad" name="keyboard1-pad" id="keyboard1-sold" data-note="sold" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-la" data-note="la" value="">
+                        <input type="button" class="black-pad" name="keyboard1-pad" id="keyboard1-lad" data-note="lad" value="">
+                        <input type="button" class="white-pad" name="keyboard1-pad" id="keyboard1-si" data-note="si" value="">
+                    </fieldset>
+
+
+                    <fieldset class="v-flex">
+                        <legend>OCTAVE</legend>
+
+                        <input type="button" class="btn" name="keyboard1-octave"  data-mode="up" value="+">
+                        <label for="keyboard1-octave" id="keyboard1-octave-label">4</label>
+                        <input type="button" class="btn" name="keyboard1-octave" data-mode="down" value="-">
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+
+    </main>    
+
+</body>
+
+<script src="src/basicsModules/BasicMaster.js"></script>
+<script src="src/basicsModules/BasicMerger.js"></script>
+<script src="src/basicsModules/BasicOsc.js"></script>
+<script src="src/basicsModules/BasicFilter.js"></script>
+
+<script src="src/ControlsHandler.js"></script>
+<script src="src/main.js"></script>
+
+</html>

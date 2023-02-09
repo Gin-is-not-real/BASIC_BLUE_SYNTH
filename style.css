@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&display=swap');
+
+
+html {
+    background-color: #081923;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 400;
+    font-size: 12pt;
+
+    --bg-color: #081923;
+    --color: rgba(47, 176, 188, 0.75);
+    --color-2: rgba(63, 204, 247, 0.75);
+    --shadow-color: rgba(47, 176, 188, 0.175);
+}
+
+html * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #3EBACE;
+    font-weight: 400;
+}
+
+header {
+    margin-bottom: 2px;
+}
+header:not(#master header) {
+    height: 5vh;
+}
+
+
+fieldset {
+    border: none;
+    font-size: 0.9rem;
+}
+label {
+    margin-top: 4px;
+}
+
+
+#main-ctn {
+    width: 90vw;
+    max-width: 600px;
+    height: 90vh;
+    margin: 2vh auto 2vh;
+    gap: 2vh;
+}
+.module-ctn {
+    gap: 2vh;
+}
+.module {
+    background-color: rgba(21, 62, 77, 0.49);
+    border: 1px solid #3ebbce44;
+    padding: 12px;
+}
+#filters > .module, #oscillators > .module {
+    width: 50%;
+}
+
+.btn-bypass, .btn-hold, select {
+    background-color: #08192379;
+    border: 1px solid #277686;
+    width: 60px;
+    height: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+.btn-bypass, .btn-hold {
+    /* width: 30px; */
+    border-radius: 1px;
+}
+
+/* range */
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: #081923;
+    width: 120px;
+    height: 10px;
+}
+input[type="range"]::-moz-range-thumb, input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 4px;
+    background: #277686;
+    border: none;
+    border-radius: 0;
+}
+input[type=range]::-moz-range-progress {
+    background-color: #3EBACE;
+    height: 100%;
+}
+
+/* master gain range */
+#master input[type=range] {
+    /* background: linear-gradient(
+        to bottom right, 
+        transparent 50%,
+        #081923e5 50%
+      ); */
+}
+#master input[type=range]::-moz-range-progress {
+    /* background-color: transparent; */
+}
+
+
+
+#kbd legend {
+    margin-bottom: 8px;
+}
+#kbd .btn {
+    background-color: #08192379;
+    border: 1px solid #277686;
+    width: 20px;
+    align-self: center;
+}
+#kbd label {
+    text-align: center;
+}
+
+/* CLASSES FLEX */
+.h-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.v-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/* DATASETS */
+[data-state="on"], input[data-state="on"] {
+    background-color: #4ad65b2c;
+    border-color: #21902ee4;
+    color: #21902ee4;
+}
+[data-state="off"], input[data-state="off"] {
+    border-color: #ae1919cd;
+    color: #ae1919cd;
+    border-color: #277686;
+    color: #277686;
+}
+
+
+
+/* MAIN GRID */
+#main-grid {
+    width: 90vw;
+    margin: 2vh auto;
+
+    display: grid;
+    grid-template-rows: 10vh 20vh 20vh 20vh;
+    grid-template-columns: 48% 48%;
+    gap: 2vh;
+}
+
+#main-grid>* {
+    background-color: rgba(21, 62, 77, 0.49);
+    border: 1px solid #3ebbce44;
+    padding: 12px;
+}
+
+#master {
+    grid-column: 1 / span 2;
+}
+#filter-1 {
+    grid-column: 1;
+}
+#filter-2 {
+    grid-column: 2;
+}
+#osc-1 {
+    grid-column: 1;
+}
+#osc-2 {
+    grid-column: 2;
+}
+#kbd {
+    grid-column: 1/span 2;
+}
+
+
+
+/* KEYBOARD GRID */
+#kbd-grid {
+    display: grid;
+    grid-template-columns: repeat(14, 11px);
+    grid-template-rows: 60px 30px;
+    gap: 4px;
+}
+
+.white-pad {
+    background-color: #05839741;
+    border: 1px solid #277686;
+    border-radius: 1px;
+
+    grid-row: 1/3;
+}
+.black-pad {
+    background-color: #081923;
+    border: 1px solid #277686;
+    border-radius: 1px;
+
+    grid-row: 1/1;
+    z-index: 50;
+}
+
+#keyboard1-do {
+    grid-column: 1/3;
+}
+#keyboard1-dod {
+    grid-column: 2/4;
+}
+#keyboard1-re {
+    grid-column: 3/5;
+}
+#keyboard1-red {
+    grid-column: 4/6;
+}
+#keyboard1-mi {
+    grid-column: 5/7;
+}
+#keyboard1-fa {
+    grid-column: 7/9;
+}
+#keyboard1-fad {
+    grid-column: 8/10;
+}
+#keyboard1-sol {
+    grid-column: 9/11;
+}
+#keyboard1-sold {
+    grid-column: 10/12;
+}
+#keyboard1-la {
+    grid-column: 11/13;
+}
+#keyboard1-lad {
+    grid-column: 12/14;
+}
+#keyboard1-si {
+    grid-column: 13/15;
+}
