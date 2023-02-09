@@ -20,15 +20,18 @@
                     <h3>MASTER</h3>
                 </header>
                 
-                <div class="h-flex">
+                <div class="h-flex" id="master-content">
                     <fieldset class="v-flex">
                         <label for="master-gain" id="master-gain-label">volume</label>
                         <input type="range" name="master-gain" id="master-gain-input" min="0" max="1" step="0.01">
                     </fieldset>
 
-                    <!-- here analysers -->
+                    <fieldset>
+                        <canvas id="oscilloscope-canvas" width="100px" height="50px" style="border: 1px solid grey"></canvas>
+                    </fieldset>
                 </div>
             </div>
+
 
 
             <div class="h-flex module-ctn" id="filters">
@@ -192,6 +195,7 @@
 </body>
 
 <script src="src/basicsModules/BasicMaster.js"></script>
+<script src="src/basicsModules/BasicOscilloscope.js"></script>
 <script src="src/basicsModules/BasicMerger.js"></script>
 <script src="src/basicsModules/BasicOsc.js"></script>
 <script src="src/basicsModules/BasicFilter.js"></script>

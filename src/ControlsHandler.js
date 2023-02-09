@@ -18,9 +18,12 @@ class ControlsHandler {
     static mergerBypassHandler(input, module, merger) {
         if(input.value === 'on') {
             merger.bypassModule(module);
+            oscilloscope.animationStop();
         }
         else {
             merger.thruModule(module);
+            oscilloscope.animationStart(100);
+
         }
         input.value = input.value === 'on' ? 'off' : 'on';
         // input.textContent = input.value;

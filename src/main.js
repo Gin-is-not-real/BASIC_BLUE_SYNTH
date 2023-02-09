@@ -28,6 +28,13 @@ const ctx = new (window.AudioContext || window.webkitAudioContext)();
 let master = new BasicMaster(ctx);
 master.gateOn();
 
+/**
+ * Analysers
+ */
+let oscilloscope = new BasicOscilloscope(ctx, document.getElementById('oscilloscope-canvas'), 256);
+oscilloscope.drawScreen();
+
+
 /*
  * Two oscillators modules, including their own osc and gain nodes
  */
@@ -65,7 +72,8 @@ mergerFilters.addModule(filter2);
  * Connect elements beetween us
  */
 mergerOsc.outputNode.connect(mergerFilters.inputNode);
-mergerFilters.outputNode.connect(master.inputNode);
+mergerFilters.outputNode.connect(oscilloscope.inputNode);
+oscilloscope.outputNode.connect(master.inputNode);
 master.outputNode.connect(ctx.destination);
 
 
